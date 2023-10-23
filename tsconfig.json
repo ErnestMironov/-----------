@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES6",                          
+    "module": "ESNext",                       
+    "outDir": "./",                       
+    "rootDir": "./",                       
+    "strict": true,                           
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,             
+    "skipLibCheck": true,                    
+    "forceConsistentCasingInFileNames": true  
+  },
+  "include": ["./index.ts"],
+  "exclude": []
+}
