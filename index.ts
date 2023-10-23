@@ -14,7 +14,7 @@ export default function splitTextToSMS(text: string): string[] {
                 currentSMS = word;
             }
         }
-        smsArray.push(currentSMS);  // Add the remaining text
+        smsArray.push(currentSMS);  
         return smsArray;
     };
     
@@ -25,11 +25,11 @@ export default function splitTextToSMS(text: string): string[] {
         let suffixLength: number = (' ' + totalFragments + '/' + totalFragments).length;
         maxSMSLength -= suffixLength;
         
-        // Re-process the smsArray with the adjusted max length
+       
         smsArray = processWords(maxSMSLength);
-        totalFragments = smsArray.length;  // Recalculate total fragments
+        totalFragments = smsArray.length; 
         
-        // Adding the suffix
+     
         smsArray = smsArray.map((sms, index) =>
             sms + ' ' + (index + 1) + '/' + totalFragments
         );
@@ -38,9 +38,8 @@ export default function splitTextToSMS(text: string): string[] {
     return smsArray;
 }
 
-// A meaningful excerpt in Russian for testing
 const text = `Время — это великий учитель, но, увы, оно убивает своих учеников. Эти слова принадлежат знаменитому французскому композитору Гектору Берлиозу. Каждый момент нашей жизни уникален. Если человек упустил момент, то вернуть его уже невозможно. Время не ждет Оно идет своим чередом. Время — это великий учитель, но, увы, оно убивает своих учеников. Эти слова принадлежат  знаменитому французскому композитору Гектору Берлиозу. Каждый момент нашей жизни уникален. Если человек упустил момент,  то вернуть его уже невозможно. Время не ждет. Оно идет своим чередом. Время — это великий учитель, но, увы, оно убивает  своих учеников. Эти слова принадлежат знаменитому французскому композитору Гектору Берлиозу. Каждый момент нашей жизни уникален. Если человек упустил момент, то вернуть его уже невозможно. Время не ждет. Оно идет своим чередом.`;
 
-// Test the function with the provided text
+
 const result = splitTextToSMS(text);
 console.log(result);
